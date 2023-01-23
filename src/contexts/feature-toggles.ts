@@ -5,6 +5,7 @@ export enum FeatureToggles {
     VIS_GJELDER_FRA_DATO = 'veientilarbeid.vis-gjelder-fra-dato',
     BRUK_BEKREFT_REAKTIVERING = 'aia.bruk-bekreft-reaktivering',
     BRUK_SPRAKVELGER = 'aia.bruk-sprakvelger',
+    BRUK_VEILEDNING_SKJEMA = 'aia.bruk-veiledning-skjema',
 }
 
 export function prettyPrintFeatureToggle(toggle: FeatureToggles) {
@@ -15,6 +16,8 @@ export function prettyPrintFeatureToggle(toggle: FeatureToggles) {
             return 'Bruk bekreft reaktivering';
         case FeatureToggles.BRUK_SPRAKVELGER:
             return 'Bruk språkvelger';
+        case FeatureToggles.BRUK_VEILEDNING_SKJEMA:
+            return 'Bruk skjema for veiledning';
     }
 }
 
@@ -22,6 +25,7 @@ export interface Data {
     'veientilarbeid.vis-gjelder-fra-dato'?: boolean;
     'aia.bruk-bekreft-reaktivering'?: boolean;
     'aia.bruk-sprakvelger'?: boolean;
+    'aia.bruk-veiledning-skjema'?: boolean;
 }
 
 export interface State extends DataElement {
@@ -33,6 +37,7 @@ export const initialState: State = {
         'veientilarbeid.vis-gjelder-fra-dato': false,
         'aia.bruk-bekreft-reaktivering': false,
         'aia.bruk-sprakvelger': false,
+        'aia.bruk-veiledning-skjema': false,
     },
     status: STATUS.NOT_STARTED,
 };
