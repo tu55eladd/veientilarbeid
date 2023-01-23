@@ -1,15 +1,5 @@
 import { Dialog } from '@navikt/ds-icons';
-import {
-    BodyLong,
-    Button,
-    Checkbox,
-    CheckboxGroup,
-    Detail,
-    Heading,
-    Panel,
-    ReadMore,
-    Textarea,
-} from '@navikt/ds-react';
+import { BodyLong, Detail, Heading, Panel, ReadMore } from '@navikt/ds-react';
 import { useSprakValg } from '../../contexts/sprak';
 import { useBehovForVeiledning } from '../../contexts/behov-for-veiledning';
 
@@ -18,6 +8,7 @@ import ReadMoreVeileder from './readmore-veileder';
 import ErRendret from '../er-rendret/er-rendret';
 import InViewport from '../in-viewport/in-viewport';
 import { ForeslattInnsatsgruppe } from '../../contexts/brukerregistrering';
+import TemaForVeiledningSkjema from './behovsavklaring-veiledning-skjema';
 
 import spacingStyles from '../../spacing.module.css';
 import flexStyles from '../../flex.module.css';
@@ -33,9 +24,6 @@ const TEKSTER = {
         klareDegSelv: 'Ønsker du å klare deg selv?',
         readMoreHeadingEnig: 'Gi beskjed dersom du likevel ønsker veiledning',
         readMoreInnholdEnig: 'Du kan når som helst ta kontakt for å starte samhandling med en veileder.',
-        veiledningTemaOverskrift: 'Hva ønsker du veiledning på?',
-        beskrivelseAvVeiledningsbehovTittel: 'Skriv kort hva du trenger hjelp til',
-        sendInnKnapp: 'Send til veileder',
     },
     en: {
         heading: 'Get in touch if you need help',
@@ -84,25 +72,6 @@ function EnigMedProfilering() {
             </div>
             <InViewport loggTekst="Viser behovsavklaringkomponent - svart - enig - standard i viewport" />
         </Panel>
-    );
-}
-
-function TemaForVeiledningSkjema() {
-    const sprak = useSprakValg().sprak;
-    const tekst = lagHentTekstForSprak(TEKSTER, sprak);
-
-    return (
-        <>
-            <CheckboxGroup legend={tekst('veiledningTemaOverskrift')}>
-                <Checkbox value={'dagpenger'}>Dagpenger</Checkbox>
-                <Checkbox value={'meldekort'}>Meldekort</Checkbox>
-                <Checkbox value={'tiltak'}>Utdanning/kurs/tiltak</Checkbox>
-                <Checkbox value={'jobbsoking'}>Søke jobb</Checkbox>
-                <Checkbox value={'annet'}>Annet</Checkbox>
-            </CheckboxGroup>
-            <Textarea label={tekst('beskrivelseAvVeiledningsbehovTittel')}></Textarea>
-            <Button className={spacingStyles.mt1}>{tekst('sendInnKnapp')}</Button>
-        </>
     );
 }
 
