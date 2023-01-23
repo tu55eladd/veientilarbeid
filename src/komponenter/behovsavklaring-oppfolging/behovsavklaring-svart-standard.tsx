@@ -1,6 +1,15 @@
 import { Dialog } from '@navikt/ds-icons';
-import { BodyLong, Detail, Heading, Panel, ReadMore } from '@navikt/ds-react';
-
+import {
+    BodyLong,
+    Button,
+    Checkbox,
+    CheckboxGroup,
+    Detail,
+    Heading,
+    Panel,
+    ReadMore,
+    Textarea,
+} from '@navikt/ds-react';
 import { useSprakValg } from '../../contexts/sprak';
 import { useBehovForVeiledning } from '../../contexts/behov-for-veiledning';
 
@@ -24,6 +33,9 @@ const TEKSTER = {
         klareDegSelv: 'Ønsker du å klare deg selv?',
         readMoreHeadingEnig: 'Gi beskjed dersom du likevel ønsker veiledning',
         readMoreInnholdEnig: 'Du kan når som helst ta kontakt for å starte samhandling med en veileder.',
+        veiledningTemaOverskrift: 'Hva ønsker du veiledning på?',
+        beskrivelseAvVeiledningsbehovTittel: 'Skriv kort hva du trenger hjelp til',
+        sendInnKnapp: 'Send til veileder',
     },
     en: {
         heading: 'Get in touch if you need help',
@@ -75,6 +87,25 @@ function EnigMedProfilering() {
     );
 }
 
+function TemaForVeiledningSkjema() {
+    const sprak = useSprakValg().sprak;
+    const tekst = lagHentTekstForSprak(TEKSTER, sprak);
+
+    return (
+        <>
+            <CheckboxGroup legend={tekst('veiledningTemaOverskrift')}>
+                <Checkbox value={'dagpenger'}>Dagpenger</Checkbox>
+                <Checkbox value={'meldekort'}>Meldekort</Checkbox>
+                <Checkbox value={'tiltak'}>Utdanning/kurs/tiltak</Checkbox>
+                <Checkbox value={'jobbsoking'}>Søke jobb</Checkbox>
+                <Checkbox value={'annet'}>Annet</Checkbox>
+            </CheckboxGroup>
+            <Textarea label={tekst('beskrivelseAvVeiledningsbehovTittel')}></Textarea>
+            <Button className={spacingStyles.mt1}>{tekst('sendInnKnapp')}</Button>
+        </>
+    );
+}
+
 function UenigMedProfilering() {
     const sprak = useSprakValg().sprak;
     const tekst = lagHentTekstForSprak(TEKSTER, sprak);
@@ -117,6 +148,7 @@ function UenigMedProfilering() {
                         aktivitet={'Behovsavklaring - svart - standard - uenig - går til aktivitetsplanen'}
                     />
                 </BodyLong>
+                <TemaForVeiledningSkjema />
             </div>
             <InViewport loggTekst="Viser behovsavklaringkomponent - svart - uenig - standard i viewport" />
         </Panel>
