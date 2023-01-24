@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Button, Checkbox, CheckboxGroup, Textarea } from '@navikt/ds-react';
 
 import { useSprakValg } from '../../contexts/sprak';
@@ -28,23 +29,38 @@ const TEKSTER = {
 };
 
 function TemaForVeiledningSkjema() {
+    const [valgteTema, setValgteTema] = useState<string[]>([]);
+    const [tilleggsinformasjon, setTilleggsinformasjon] = useState('');
     const toggles = useFeatureToggleData();
     const sprak = useSprakValg().sprak;
     const tekst = lagHentTekstForSprak(TEKSTER, sprak);
+
+    function handleInnsending() {
+        console.log(valgteTema);
+        console.log(tilleggsinformasjon);
+    }
 
     if (!toggles[FeatureToggles.BRUK_VEILEDNING_SKJEMA]) return null;
 
     return (
         <>
-            <CheckboxGroup legend={tekst('veiledningTemaOverskrift')}>
+            <CheckboxGroup
+                legend={tekst('veiledningTemaOverskrift')}
+                onChange={(valgte: any[]) => setValgteTema(valgte)}
+            >
                 <Checkbox value={'dagpenger'}>Dagpenger</Checkbox>
                 <Checkbox value={'meldekort'}>Meldekort</Checkbox>
                 <Checkbox value={'tiltak'}>Utdanning/kurs/tiltak</Checkbox>
                 <Checkbox value={'jobbsoking'}>Søke jobb</Checkbox>
                 <Checkbox value={'annet'}>Annet</Checkbox>
             </CheckboxGroup>
-            <Textarea label={tekst('beskrivelseAvVeiledningsbehovTittel')}></Textarea>
-            <Button className={spacingStyles.mt1}>{tekst('sendInnKnapp')}</Button>
+            <Textarea
+                label={tekst('beskrivelseAvVeiledningsbehovTittel')}
+                onChange={(event) => setTilleggsinformasjon(event.target.value)}
+            ></Textarea>
+            <Button className={spacingStyles.mt1} onClick={() => handleInnsending()}>
+                {tekst('sendInnKnapp')}
+            </Button>
         </>
     );
 }
