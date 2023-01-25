@@ -26,7 +26,7 @@ export const BehovForVeiledningContext = createContext<BehovForVeiledningProvide
     lagreBehovForVeiledning: () => Promise.resolve(),
 });
 
-async function opprettDialog(data: { tekst?: string; overskrift?: string }): Promise<null | { id: string }> {
+export async function opprettDialog(data: { tekst?: string; overskrift?: string }): Promise<null | { id: string }> {
     if (!data.tekst && !data.overskrift) {
         return Promise.resolve(null);
     }
@@ -40,6 +40,7 @@ async function opprettDialog(data: { tekst?: string; overskrift?: string }): Pro
         }),
     });
 }
+
 function BehovForVeiledningProvider(props: { children: ReactNode }) {
     const [behovForVeiledning, settBehovForVeiledning] = useState<BehovForVeiledningResponse>(null);
 
