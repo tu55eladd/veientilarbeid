@@ -20,6 +20,7 @@ const TEKSTER = {
         readMoreInnholdEnig: 'Du kan når som helst ta kontakt for å starte samhandling med en veileder.',
         veiledningTemaOverskrift: 'Hva ønsker du veiledning på?',
         beskrivelseAvVeiledningsbehovTittel: 'Skriv kort hva du trenger hjelp til',
+        feilmelding: 'Du må velge emne for veildening også',
         sendInnKnapp: 'Send til veileder',
     },
     en: {
@@ -34,6 +35,10 @@ function TemaForVeiledningSkjema() {
     const toggles = useFeatureToggleData();
     const sprak = useSprakValg().sprak;
     const tekst = lagHentTekstForSprak(TEKSTER, sprak);
+
+    function harIkkeValgtTema() {
+        return valgteTema.length === 0 && tilleggsinformasjon !== '';
+    }
 
     function handleInnsending() {
         console.log(valgteTema);
@@ -57,6 +62,7 @@ function TemaForVeiledningSkjema() {
             <Textarea
                 label={tekst('beskrivelseAvVeiledningsbehovTittel')}
                 onChange={(event) => setTilleggsinformasjon(event.target.value)}
+                error={harIkkeValgtTema() ? tekst('feilmelding') : ''}
             ></Textarea>
             <Button className={spacingStyles.mt1} onClick={() => handleInnsending()}>
                 {tekst('sendInnKnapp')}
