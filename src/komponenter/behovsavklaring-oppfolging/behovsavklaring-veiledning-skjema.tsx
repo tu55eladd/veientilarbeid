@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Button, Checkbox, CheckboxGroup, Textarea } from '@navikt/ds-react';
 
 import { useSprakValg } from '../../contexts/sprak';
+import { useBehovForVeiledning } from '../../contexts/behov-for-veiledning';
 import { useFeatureToggleData, FeatureToggles } from '../../contexts/feature-toggles';
 
 import lagHentTekstForSprak from '../../lib/lag-hent-tekst-for-sprak';
@@ -32,6 +33,8 @@ const TEKSTER = {
 function TemaForVeiledningSkjema() {
     const [valgteTema, setValgteTema] = useState<string[]>([]);
     const [tilleggsinformasjon, setTilleggsinformasjon] = useState('');
+    const [harSvart, setHarSvart] = useState(false);
+    const { behovForVeiledning } = useBehovForVeiledning();
     const toggles = useFeatureToggleData();
     const sprak = useSprakValg().sprak;
     const tekst = lagHentTekstForSprak(TEKSTER, sprak);
@@ -41,11 +44,17 @@ function TemaForVeiledningSkjema() {
     }
 
     function handleInnsending() {
-        console.log(valgteTema);
-        console.log(tilleggsinformasjon);
+        if (!harIkkeValgtTema()) {
+            console.log(valgteTema);
+            console.log(tilleggsinformasjon);
+            console.log(behovForVeiledning?.dialogId);
+            // Kode for å sende inn svarene
+            setHarSvart(true);
+        }
     }
 
     if (!toggles[FeatureToggles.BRUK_VEILEDNING_SKJEMA]) return null;
+    if (harSvart) return null;
 
     return (
         <>

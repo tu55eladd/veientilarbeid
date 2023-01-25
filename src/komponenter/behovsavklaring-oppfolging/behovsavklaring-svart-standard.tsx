@@ -1,5 +1,6 @@
 import { Dialog } from '@navikt/ds-icons';
 import { BodyLong, Detail, Heading, Panel, ReadMore } from '@navikt/ds-react';
+
 import { useSprakValg } from '../../contexts/sprak';
 import { useBehovForVeiledning } from '../../contexts/behov-for-veiledning';
 
@@ -9,10 +10,10 @@ import ErRendret from '../er-rendret/er-rendret';
 import InViewport from '../in-viewport/in-viewport';
 import { ForeslattInnsatsgruppe } from '../../contexts/brukerregistrering';
 import TemaForVeiledningSkjema from './behovsavklaring-veiledning-skjema';
+import { AktivitetsplanLenke, DialogLenke, GaaTilDialogKnapp } from './lenker';
 
 import spacingStyles from '../../spacing.module.css';
 import flexStyles from '../../flex.module.css';
-import { AktivitetsplanLenke, DialogLenke, GaaTilDialogKnapp } from './lenker';
 
 const TEKSTER = {
     nb: {
@@ -99,6 +100,7 @@ function UenigMedProfilering() {
                 <Heading className={spacingStyles.blokkXs} size="medium">
                     {tekst('headingUenig')}
                 </Heading>
+                <TemaForVeiledningSkjema />
                 <BodyLong className={spacingStyles.mb1}>
                     En veileder vil ta stilling til hva slags hjelp du kan få. Du vil få et vedtaksbrev om dette.
                 </BodyLong>
@@ -117,7 +119,6 @@ function UenigMedProfilering() {
                         aktivitet={'Behovsavklaring - svart - standard - uenig - går til aktivitetsplanen'}
                     />
                 </BodyLong>
-                <TemaForVeiledningSkjema />
             </div>
             <InViewport loggTekst="Viser behovsavklaringkomponent - svart - uenig - standard i viewport" />
         </Panel>
