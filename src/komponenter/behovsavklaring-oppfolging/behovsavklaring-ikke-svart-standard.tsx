@@ -52,6 +52,7 @@ function IkkeSvartPaaBehovsavklaringStandardInnsats() {
                 oppfolging: behov,
                 overskrift: tekst('behovOverskrift'),
                 tekst: tekst(behov === ForeslattInnsatsgruppe.STANDARD_INNSATS ? 'behovSvarEnig' : 'behovSvarUenig'),
+                ferdigBehandlet: behov === ForeslattInnsatsgruppe.STANDARD_INNSATS,
             });
             loggAktivitet({
                 ...amplitudeData,
