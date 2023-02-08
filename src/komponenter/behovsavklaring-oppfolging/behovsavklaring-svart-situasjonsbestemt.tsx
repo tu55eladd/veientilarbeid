@@ -7,7 +7,7 @@ import { useBehovForVeiledning } from '../../contexts/behov-for-veiledning';
 import lagHentTekstForSprak from '../../lib/lag-hent-tekst-for-sprak';
 import ReadMoreVeileder from './readmore-veileder';
 import ErRendret from '../er-rendret/er-rendret';
-import InViewport from '../in-viewport/in-viewport';
+import InViewport from '../in-viewport/in-viewport-gammel';
 import { ForeslattInnsatsgruppe } from '../../contexts/brukerregistrering';
 import { ListeElement } from '../situasjonsbestemt/situasjonsbestemt';
 

@@ -18,7 +18,7 @@ import InnvilgetDagpenger from './dagpenger-innvilget';
 import AvslagDagpenger from './dagpenger-avslag';
 import beregnDagpengeStatus, { DagpengeStatus } from '../../lib/beregn-dagpenge-status';
 import ErRendret from '../er-rendret/er-rendret';
-import InViewport from '../in-viewport/in-viewport';
+import InViewport from '../in-viewport/in-viewport-gammel';
 import ByttVisningLenke from './bytt-visning-lenke';
 import Ytelser from './ytelser';
 import beregnArbeidssokerperioder from '../../lib/beregn-arbeidssokerperioder';

@@ -9,7 +9,7 @@ import { dagpengerSoknadLenke } from '../../innhold/lenker';
 import { loggAktivitet } from '../../metrics/metrics';
 
 import ErRendret from '../er-rendret/er-rendret';
-import InViewport from '../in-viewport/in-viewport';
+import InViewport from '../in-viewport/in-viewport-gammel';
 import useVisKvittering from '../../hooks/use-vis-kvittering';
 import { fjernQueryParam } from '../../utils/query-param-utils';
 import lagHentTekstForSprak from '../../lib/lag-hent-tekst-for-sprak';

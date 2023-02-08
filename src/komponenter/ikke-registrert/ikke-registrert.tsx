@@ -3,7 +3,7 @@ import spacingStyles from '../../spacing.module.css';
 
 import { loggAktivitet } from '../../metrics/metrics';
 import { registreringsLenke } from '../../innhold/lenker';
-import InViewport from '../in-viewport/in-viewport';
+import InViewport from '../in-viewport/in-viewport-gammel';
 import ErRendret from '../er-rendret/er-rendret';
 import { useAmplitudeData } from '../hent-initial-data/amplitude-provider';
 import lagHentTekstForSprak from '../../lib/lag-hent-tekst-for-sprak';

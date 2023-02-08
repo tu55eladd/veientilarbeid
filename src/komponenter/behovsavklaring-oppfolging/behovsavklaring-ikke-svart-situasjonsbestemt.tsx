@@ -9,7 +9,7 @@ import { loggAktivitet } from '../../metrics/metrics';
 import ReadMoreVeileder from './readmore-veileder';
 import ReadMoreVurdering from './readmore-vurdering';
 import ErRendret from '../er-rendret/er-rendret';
-import InViewport from '../in-viewport/in-viewport';
+import InViewport from '../in-viewport/in-viewport-gammel';
 import { ForeslattInnsatsgruppe } from '../../contexts/brukerregistrering';
 import { ListeElement } from '../situasjonsbestemt/situasjonsbestemt';
 

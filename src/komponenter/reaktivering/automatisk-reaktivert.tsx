@@ -9,7 +9,7 @@ import { useAmplitudeData } from '../hent-initial-data/amplitude-provider';
 
 import { ReadMoreInaktivering } from './readmore-derfor-ble-du-inaktivert';
 import { ReadMoreViktigRegistrert } from './readmore-viktig-registrert';
-import InViewport from '../in-viewport/in-viewport';
+import InViewport from '../in-viewport/in-viewport-gammel';
 import ErRendret from '../er-rendret/er-rendret';
 import beregnArbeidssokerperioder from '../../lib/beregn-arbeidssokerperioder';
 import prettyPrintDato from '../../utils/pretty-print-dato';

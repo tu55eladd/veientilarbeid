@@ -24,8 +24,12 @@ export type VisningsMetrikkData = {
 export type AmplitudeStandardVisningsData = VisningsMetrikkData & AmplitudeData;
 
 // Brukes for å beskrive hva brukerene ser i viewport
-export const loggVisning = (data: AmplitudeStandardVisningsData) => {
+export const loggVisningGammel = (data: AmplitudeStandardVisningsData) => {
     amplitudeLogger(`${domene}.visning`, data);
+};
+
+export const loggVisning = (data: AmplitudeStandardVisningsData) => {
+    amplitudeLogger(`aia.visning`, data);
 };
 
 export type RendringsMetrikkData = {

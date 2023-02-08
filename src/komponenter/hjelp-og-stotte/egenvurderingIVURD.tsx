@@ -8,7 +8,7 @@ import { useProfil } from '../../contexts/profil';
 
 import { loggAktivitet } from '../../metrics/metrics';
 import { behovsvurderingLenke } from '../../innhold/lenker';
-import InViewport from '../in-viewport/in-viewport';
+import InViewport from '../in-viewport/in-viewport-gammel';
 import lagHentTekstForSprak from '../../lib/lag-hent-tekst-for-sprak';
 import { hentProfilnokkelFraLocalStorage } from '../../utils/profil-id-mapper';
 

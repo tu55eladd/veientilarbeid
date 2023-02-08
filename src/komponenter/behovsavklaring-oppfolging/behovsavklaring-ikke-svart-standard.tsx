@@ -10,7 +10,7 @@ import lagHentTekstForSprak from '../../lib/lag-hent-tekst-for-sprak';
 import { loggAktivitet } from '../../metrics/metrics';
 import ReadMoreVeileder from './readmore-veileder';
 import ErRendret from '../er-rendret/er-rendret';
-import InViewport from '../in-viewport/in-viewport';
+import InViewport from '../in-viewport/in-viewport-gammel';
 import ReadMoreVurdering from './readmore-vurdering';
 import { ForeslattInnsatsgruppe } from '../../contexts/brukerregistrering';
 

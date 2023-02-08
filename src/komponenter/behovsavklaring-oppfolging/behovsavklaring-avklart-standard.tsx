@@ -6,7 +6,7 @@ import { useSprakValg } from '../../contexts/sprak';
 import lagHentTekstForSprak from '../../lib/lag-hent-tekst-for-sprak';
 import ReadMoreVeileder from './readmore-veileder';
 import ErRendret from '../er-rendret/er-rendret';
-import InViewport from '../in-viewport/in-viewport';
+import InViewport from '../in-viewport/in-viewport-gammel';
 
 import spacingStyles from '../../spacing.module.css';
 import flexStyles from '../../flex.module.css';

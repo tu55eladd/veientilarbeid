@@ -15,7 +15,7 @@ import {
 import Meldekortstatus from './meldekortstatus';
 import lagHentTekstForSprak from '../../lib/lag-hent-tekst-for-sprak';
 import ErRendret from '../er-rendret/er-rendret';
-import InViewport from '../in-viewport/in-viewport';
+import InViewport from '../in-viewport/in-viewport-gammel';
 import MeldekortKnapp from './meldekort-knapp';
 import { vilUtmeldes } from '../../lib/vil-utmeldes';
 

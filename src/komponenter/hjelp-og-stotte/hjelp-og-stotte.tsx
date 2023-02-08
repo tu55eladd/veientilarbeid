@@ -21,7 +21,7 @@ import { kanViseIVURDEgenvurdering } from '../../lib/kan-vise-IVURD-egenvurderin
 import { hentFraBrowserStorage } from '../../utils/browserStorage-utils';
 import lagHentTekstForSprak from '../../lib/lag-hent-tekst-for-sprak';
 import { loggAktivitet } from '../../metrics/metrics';
-import InViewport from '../in-viewport/in-viewport';
+import InViewport from '../in-viewport/in-viewport-gammel';
 import Forklaring from './forklaring';
 import EgenvurderingUke12, { INTRO_KEY_12UKER } from './egenvurdering-uke12';
 import { kanVise12UkerEgenvurdering } from '../../lib/kan-vise-12-uker-egenvurdering';

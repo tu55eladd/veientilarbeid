@@ -4,7 +4,7 @@ import { useAmplitudeData } from '../hent-initial-data/amplitude-provider';
 import { useMeldeplikt } from '../../contexts/meldeplikt';
 
 import ErRendret from '../er-rendret/er-rendret';
-import InViewport from '../in-viewport/in-viewport';
+import InViewport from '../in-viewport/in-viewport-gammel';
 import { loggAktivitet } from '../../metrics/metrics';
 import { dialogLenke, reaktiveringLenke } from '../../innhold/lenker';
 import SisteMeldekortVidereRegistrertValg from './siste-meldekort-videre-registrert-valg';
