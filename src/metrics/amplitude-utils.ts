@@ -81,3 +81,8 @@ export function setIdentifyProperty(name: string, value: string) {
     const identify = new amplitude.Identify().set(name, value);
     amplitude.getInstance().identify(identify);
 }
+
+export const aiaVisningMetrikker = {
+    aiaIViewportTopp: 'AiA i viewport topp',
+    aiaIViewportBunn: 'AiA i viewport bunn',
+};

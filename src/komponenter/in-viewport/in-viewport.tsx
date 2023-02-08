@@ -31,7 +31,7 @@ function InViewport(props: Props & ViewportProps): JSX.Element {
 
     useEffect(() => {
         setTimeout(loggTilAmplitude, 2000);
-    }, []);
+    }, [harVistTilBruker, props.loggTekst]);
 
     return <span ref={props.forwardedRef}></span>;
 }

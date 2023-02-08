@@ -18,6 +18,8 @@ import { AutomatiskReaktivert } from '../komponenter/reaktivering/automatisk-rea
 import { visAutomatiskReaktiveringsKort } from '../lib/vis-automatisk-reaktiverings-kort';
 
 import styles from './innhold.module.css';
+import InViewport from '../komponenter/in-viewport/in-viewport';
+import { aiaVisningMetrikker } from '../metrics/amplitude-utils';
 
 const InnholdStandard = () => {
     const arbeidssokerperioderData = useArbeidssokerPerioder();
@@ -41,6 +43,7 @@ const InnholdStandard = () => {
     return (
         <>
             <InnholdMetrics />
+            <InViewport loggTekst={aiaVisningMetrikker.aiaIViewportTopp} />
             <div className={styles.limit}>
                 {skalViseReaktiveringsKort ? (
                     <AutomatiskReaktivert />
@@ -56,6 +59,7 @@ const InnholdStandard = () => {
                         <GjelderFraDato />
                     </>
                 )}
+                <InViewport loggTekst={aiaVisningMetrikker.aiaIViewportBunn} />
             </div>
         </>
     );
